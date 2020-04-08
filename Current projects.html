@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Current Projects</title>
+</head>
+<style type="text/css">
+
+/*Menu Icon*/
+.container {
+               display: inline-block;
+               cursor: pointer;
+}
+
+/*bars*/
+.bar1,.bar3 {
+               width: 35px;
+               height: 5px;
+               background-color: #333;
+               margin: 6px 0;
+               transition: 0.4s;
+}
+
+.bar2{
+	             width: 25px;
+               height: 5px;
+               background-color: #333;
+               margin: 6px 0;
+               transition: 0.4s; 
+}
+
+/* Rotate first bar */
+.change .bar1 {
+               transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+               opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+               transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+/* The side navigation menu */
+.sidenav {
+               height: 100%; /
+               width: 0; 
+               position: fixed; 
+               z-index: 1; 
+               top: 0;
+               left: 0;
+               background-color: #111; 
+               overflow-x: hidden; 
+               padding-top: 60px; 
+               transition: 0.5s;
+               opacity: 0.9; 
+}
+
+/* The navigation menu links */
+.sidenav a {
+               padding: 8px 8px 8px 32px;
+               text-decoration: none;
+               font-size: 70px;
+               color: #fae03c;
+               display: block;
+               transition: 0.3s;
+               text-align: center;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+               color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.closebtn {
+               position: absolute;
+               top: 0;
+               right: 25px;
+               font-size: 36px;
+               margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+               transition: margin-left .5s;
+               padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+               .sidenav {padding-top: 15px;}
+               .sidenav a {font-size: 18px;}
+}
+
+/*Current projects*/
+h1{
+               color: #800080;
+               text-align: right;
+               font-size: 67px;
+               font-family: monospace;
+               text-shadow: 2px 2px;
+}
+
+/*Building project*/
+h2{
+               margin-top: 2px;
+               font-family: Comic Sans MS;
+               font-size: 25px;
+}
+
+/*First paragraph*/
+p.one{
+	             width:97%;
+	             margin-top: -19px;
+	             height: 88px;
+}
+
+/*Picture position*/
+#nav2{
+               height: 200px;
+               width: 180px;
+               float:left;
+}
+
+/*Images*/
+img.one{
+	            width: 170px; 
+	            height:200px;
+	            border-radius: 20px 0px 0px 20px;
+}
+
+/*All buttons*/
+.button {
+               background-color: #7fffd4; 
+               border: none;
+               color: white;
+               padding: 15px 32px;
+               text-align: center;
+               display: inline-block;
+               text-decoration: none;
+               font-size: 16px;
+               margin: 4px 2px;
+               cursor: pointer;
+               border-radius: 19px;
+               float: right;
+               box-shadow : 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover{
+	             background-color: #a9a9a9;
+}
+
+section.one{
+	             height: 200px;
+	             background-color: #fff;
+	             box-shadow : 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	             border-radius: 20px;
+}
+
+/*CSR heading*/
+h3{
+	             font-family: Comic Sans MS;
+               font-size: 25px;
+               margin-top: 2px 
+}
+
+/*CSR paragraph*/
+p.two{
+               width:97%;
+	             margin-top: -22px;
+	             height: 88px;
+}
+
+section.two{
+	             margin-top: 38px;
+	             height: 200px;
+	             background-color: #fff;
+               box-shadow : 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+               border-radius: 20px;
+}
+
+/*Last heading*/
+h4{
+	             font-family: Comic Sans MS;
+               font-size: 25px;
+               margin-top: 2px 
+}
+
+/*Last paragraph*/
+p.three{
+               width:97%;
+	             margin-top: -32px;
+	             height: 88px;
+}
+
+section.three{
+	             margin-top: 38px;
+	             height: 200px;
+	             background-color: #fff;
+	             box-shadow : 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	             border-radius: 20px;
+}
+
+/*Events and times*/
+p.four{
+               text-align: center;
+               font-family: Harlow Solid Italic;
+               font-size: 20px;
+               color: #ffffff;
+               width: 70%;
+               margin-left: 23px;
+               text-shadow: 2px 2px 5px red;
+}
+
+footer{
+               color: #ffffff;
+               background-image: url("img_lights_wide.jpg"); 
+               background-repeat: no-repeat;
+               height: 160px;
+               width: 100%;
+               margin-top: 52px;
+               box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+               border-radius: 20px;
+}
+
+</style>
+
+<body>
+<header>
+<!-- Use any element to open the sidenav -->
+<span onclick="openNav()">
+       <div class="container" onclick="myFunction(this)">
+       <div class="bar1"></div>
+       <div class="bar2"></div>
+       <div class="bar3"></div>
+       </div>
+</span>
+
+<!--Js of Menu Icon-->
+<script type="text/javascript">
+	   function myFunction(x) {
+       x.classList.toggle("change");
+}
+</script>
+
+<!--Html for Menu and Links-->
+<div id="mySidenav" class="sidenav">
+       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        
+       <a href="DMS Home.html">Home</a>
+
+       <a href="Dominion Stories.html">Dominion Stories</a>
+
+       <a href="Current Projects.html">Current Projects</a>
+
+       <a href="Media Resources.html">Media Resources</a>
+</div>
+
+<!--Js for sidenav-->
+<script type="text/javascript">
+/* Open the sidenav */
+       function openNav() {
+       document.getElementById("mySidenav").style.width = "100%";
+}
+
+/* Close/hide the sidenav */
+       function closeNav() {
+       document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+       <h1>Our Current Projects</h1>
+</header>
+
+<!--Html for first section-->
+<section class="one">
+<div id="nav2">
+       <img class="one" src="10916355_1530174477247472_6845535865551575798_o.jpg" alt="sky view">
+</div>
+       <h2>The Building project</h2>
+       
+       <p class="one">
+         
+       </p>
+       <button class="button">Click Me</button>
+</section>
+
+<!--Html for second section-->
+<section class="two">
+<div id="nav2">
+       <img class="one" src="10916355_1530174477247472_6845535865551575798_o.jpg" alt="sky view">
+</div>
+       <h3>Our Corporate Social Responsibility</h3>
+       
+       <p class="two">
+         
+       </p>x 
+       <button class="button">Click Me</button>
+</section>
+
+<!--Html for third section-->
+<section class="three">
+<div id="nav2">
+       <img class="one" src="10916355_1530174477247472_6845535865551575798_o.jpg" alt="sky view">
+</div>
+       <h4>Go Ye Ministries</h4>
+       
+       <p class="three">
+         
+       </p>
+       <button class="button">Click me</button>
+</section>
+
+<br>
+<br>
+<br>
+
+<footer>
+<!--Html for footer text-->
+<p class="four">
+<br> 
+       Join us on Tuesdays at 6pm(GMT+1) to Dig deep in the Word<br>
+               Thursdays at 6pm(GMT+1) for Faith Clinic<br>
+<br>
+       And our Live stream on Sundays at 9am(GMT+1) for our<br>
+                   Special Celebration Service<br>
+<br>
+                                  
+</p>                                  
+</footer>
+
+</body>
+</html>

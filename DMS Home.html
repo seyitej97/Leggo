@@ -1,0 +1,561 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>DMS Home</title>
+<style type="text/css">
+
+/*Menu Icon*/
+.container {
+               display: inline-block;
+               cursor: pointer;
+}
+
+/*bars*/
+.bar1,.bar3 {
+               width: 35px;
+               height: 5px;
+               background-color: #333;
+               margin: 6px 0;
+               transition: 0.4s;
+}
+
+.bar2{
+               width: 25px;
+               height: 5px;
+               background-color: #333;
+               margin: 6px 0;
+               transition: 0.4s; 
+}
+
+/* Rotate first bar */
+.change .bar1 {
+               transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+               opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+               transform: rotate(45deg) translate(-8px, -8px) ;
+}
+      
+
+/* The side navigation menu */
+.sidenav {
+               height: 100%; 
+               width: 0; 
+               position: fixed; 
+               z-index: 1; 
+               top: 0;
+               left: 0;
+               background-color: #111; 
+               overflow-x: hidden; 
+               padding-top: 60px; 
+               transition: 0.5s; 
+               opacity: 0.9;
+}
+
+/* The navigation menu links */
+.sidenav a {
+               padding: 8px 8px 8px 32px;
+               text-decoration: none;
+               font-size: 75px;
+               color: #FAE03C;
+               display: block;
+               transition: 0.3s;
+               text-align: center;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+               color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.closebtn {
+               position: absolute;
+               top: 0;
+               right: 25px;
+               font-size: 36px !important;
+               margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+               transition: margin-left .5s;
+               padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+               .sidenav {padding-top: 15px;}
+               .sidenav a {font-size: 18px;}
+}
+
+/*Redeemed logo*/
+img.one{
+               box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+               border-radius: 110px;
+}
+
+/*Dominion Sanctuary*/   
+h1{
+               text-align: center;
+               font-size: 6.25em;
+               color: #483D8B;
+}
+
+/*Dominion Motto*/
+p.one{
+               text-align: center;
+               font-size: 20px;
+               margin-top: -20px;
+}
+
+header{
+               border-style: hidden;
+               height:570px;
+               background-color:#ffffff;
+}
+
+/*PICZ Caption*/
+h2{
+               font-family: Bernard MT Condensed;
+               font-weight: normal;
+               text-align: right;
+               margin-top: -3px;
+}
+
+/*Welcome Message*/
+h3{
+               font-family: Broadway;
+               font-size: 48px;
+               border-style: hidden;
+               width: 50%;
+               text-shadow: 2px 2px;
+}
+
+/*Image two*/
+img.two{
+               width: 300px; 
+               height: 400px;
+}
+
+/*PICZ Image*/
+#nav2{
+               height:400px;
+               width:300px;
+               float:right;
+               margin-top:-103px;
+               box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/*Message board*/
+p.two{
+               width: 77%;
+               margin-top:-27px;
+               float: left;
+               height: 357px;
+               word-spacing: 10px;
+               line-height: 1.8;
+               font-family: "Comic Sans MS", cursive, sans-serif;
+               font-size: 20px;
+               color: #ffffff;
+               text-shadow: 2px 2px 5px black;
+}
+
+section.one{
+               border-style: hidden;
+               width: 100%;
+               height:460px;
+               background-color:#FAE03C;
+               box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/*Podcast photo*/
+img.three{
+               float: left;
+               box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+               width: 600px; 
+               height: 598px;
+}
+
+/*Click button*/
+#Click{
+               height: 50px;
+               width: 200px;
+               border-radius: 0px;
+               border: none;
+               cursor: pointer;
+               font-size: 1em;
+               background: #fae03c;
+               position: absolute;
+               left: 208px;
+               top: 1530px;
+               z-index: +1;
+} 
+
+#Click:hover {
+               background-color: #a9a9a9;
+}        
+
+a{
+               color: #ffffff;
+               text-decoration: none;
+               font-size: 20px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+               width: 727px;
+               height: 590px;
+               position: relative;
+               margin-left: 600px;
+               margin-top:-740px;
+               box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* Next & previous buttons */
+.prev, .next {
+               cursor: pointer;
+               position: absolute;
+               top: 50%;
+               width: auto;
+               margin-top: -22px;
+               padding: 16px;
+               color: white;
+               font-weight: bold;
+               font-size: 18px;
+               transition: 0.6s ease;
+               border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+               right: 0;
+               border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+               background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+               color: #f2f2f2;
+               font-size: 15px;
+               padding: 8px 12px;
+               position: absolute;
+               bottom: 8px;
+               width: 100%;
+               text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+               color: #f2f2f2;
+               font-size: 12px;
+               padding: 8px 12px;
+               position: absolute;
+               top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+               cursor:pointer;
+               height: 13px;
+               width: 13px;
+               margin: 0 2px;
+               background-color: #bbb;
+               border-radius: 70%;
+               display: inline-block;
+               transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+               background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+               animation-name: fade;
+               animation-duration: 1.5s;
+}
+
+@keyframes fade {
+               from {opacity: .4} 
+               to {opacity: 1}
+}
+
+/*Slideshow images*/
+img.four{
+               width:733px;
+               height:598px;
+}
+
+/*Enquiries paragraph*/
+p.three{
+               text-align: center;
+               margin-top: 50px;
+}
+
+h4{
+               text-align: center;
+               margin-top: -10px;
+               font-size: 30px;
+               font-family: Castellar;
+}
+
+section.two{
+               border-style: hidden;
+               height: 740px;
+               background-color: #ffffff;
+} 
+
+
+/*chips*/
+.chip {
+               display: inline-block;
+               padding: 0 25px;
+               height: 58px;
+               width: 168px;
+               font-size: 16px;
+               line-height: 50px;
+               border-radius: 25px;
+               background-color: #ffffff;
+}
+
+/*chip image*/
+img.five{
+               float: left;
+               margin: 0 10px 0 -25px;
+               height: 60px;
+               width: 60px;
+               border-radius: 50%;
+               box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+section.three{
+               border-style: hidden;
+               height: 60px;
+               background-color: #ffffff;
+               width: 100%;
+}
+
+/*Events and times*/
+p.four{
+               text-align: center;
+               font-family: Harlow Solid Italic;
+               font-size: 20px;
+               color: #ffffff;
+               width: 70%;
+               margin-left: 23px;
+               text-shadow: 2px 2px 5px red;
+}
+
+footer{
+               color: #ffffff;
+               background-image: url("img_lights_wide.jpg"); 
+               background-repeat: no-repeat;
+               height: 160px;
+               width: 100%;
+               margin-top: 52px;
+               box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+               border-radius: 20px;
+}
+
+</style> 
+</head>  
+
+<body>
+<main>
+
+<header>
+<!-- Use any element to open the sidenav -->
+<span onclick="openNav()">
+       <div class="container" onclick="myFunction(this)">
+       <div class="bar1"></div>
+       <div class="bar2"></div>
+       <div class="bar3"></div>
+       </div>
+</span>
+
+<!--Js for Menu Icon-->
+<script type="text/javascript">
+       function myFunction(x) {
+       x.classList.toggle("change");
+}
+</script>
+
+<!--Html for Menu and Links-->
+<div id="mySidenav" class="sidenav">
+       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
+       <a href="DMS Home.html">Home</a>
+
+       <a href="Dominion Stories.html">Dominion Stories</a>
+
+       <a href="Current Projects.html">Current Projects</a>
+
+       <a href="Media Resources.html">Media Resources</a>
+</div>
+
+<!--Js for side nav-->
+<script type="text/javascript">
+/* Open the sidenav */
+       function openNav() {
+       document.getElementById("mySidenav").style.width = "100%";
+}
+
+/* Close/hide the sidenav */
+       function closeNav() {
+       document.getElementById("mySidenav").style.width = "0";
+}
+</script>       
+       
+<!--Html for logo, first header and paragraph-->
+       <h1>
+       <img class="one" src="1568213366450.jpg" alt="redeemed logo"/>DOMINION SANCTUARY</h1>
+       <p class="one"><i>Where we rule and reign....</i></p>
+</header>
+
+<!--Html for Message board-->
+<section class="one">
+<h3>Welcome Message</h3>
+<div id="nav2">
+       <img class="two" src="10916355_1530174477247472_6845535865551575798_o.jpg" alt="sky view">
+       <h2>
+            Pastor Toyin Tejumade<br>PICZ, Dominion Sanctuary
+       </h2>
+</div>
+       
+       <p class="two">
+         There are general rules and concepts that govern the field of accounting. These general rules–referred to as basic accounting principles and guidelines–form the groundwork on which more detailed, complicated, and legalistic accounting rules are based. For example, the Financial Accounting Standards Board (FASB) uses the basic accounting principles and guidelines as a basis for their own detailed and comprehensive set of accounting rules and standards.
+         The phrase "generally accepted accounting principles" (or "GAAP") consists of three important sets of rules: 
+         (1) the basic accounting principles and guidelines, 
+         (2) the detailed rules and standards issued by FASB and its predecessor
+         the Accounting Principles Board (APB), and 
+         (3) the generally accepted industry practices.
+       </p>
+</section>
+
+<!--Html for podcast photo-->
+<section class="two">
+       <img class="three" src="20191010_220823_0000.png">
+       <button id="Click" type="button" onclick="">
+       <a href="#">Click to listen</a> 
+       </button>
+</section>
+
+<!--Html for slideshow-->
+<section class="two">
+<div class="slideshow-container">
+       <div class="mySlides fade">
+       <div class="numbertext">1 / 3</div>
+       <img class="four" src="Desert.jpg" w>
+       <div class="text">Caption Text</div>
+       </div>
+
+       <div class="mySlides fade">
+       <div class="numbertext">2 / 3</div>
+       <img class="four" src="Chrysanthemum.jpg">
+       <div class="text">Caption Two</div>
+       </div>
+
+       <div class="mySlides fade">
+       <div class="numbertext">3 / 3</div>
+       <img class="four" src="Jellyfish.jpg">
+       <div class="text">Caption Three</div>
+       </div>
+
+       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+       <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!--Html for Enquiries-->
+       <p class="three">For enquiries, counselling and prayer requests</p>
+       <h4>send us an email today...</h4>
+</section>
+
+<!--Js for slideshow-->
+<script type="text/javascript">
+       var slideIndex = 1;
+       showSlides(slideIndex);
+
+       function plusSlides(n) {
+       showSlides(slideIndex += n);
+}
+
+       function currentSlide(n) {
+       showSlides(slideIndex = n);
+}
+
+       function showSlides(n) {
+       var i; 
+       var slides = document.getElementsByClassName("mySlides");
+       var dots = document.getElementsByClassName("dot");
+       if (n > slides.length) {slideIndex = 1}   
+       if (n < 1) {slideIndex = slides.length};
+       for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none"; 
+}
+       for (i = 0; i < dots.length; i++) {
+       dots[i].classList.remove("active");
+}
+       slides[slideIndex-1].style.display = "block";
+       dots[slideIndex-1].classList.add("active");
+}
+</script>
+
+<!--Html for chips-->
+<section class="three">        
+       <div class="chip">
+       <img class="five" src="10916355_1530174477247472_6845535865551575798_o.jpg">
+       </div>
+
+       <div class="chip">
+       <img class="five" src="10916355_1530174477247472_6845535865551575798_o.jpg">
+       </div>
+
+       <div class="chip">
+       <img class="five" src="10916355_1530174477247472_6845535865551575798_o.jpg">
+       </div>
+ 
+       <div class="chip">
+       <img class="five" src="10916355_1530174477247472_6845535865551575798_o.jpg">
+       </div>
+
+       <div class="chip">
+       <img class="five" src="10916355_1530174477247472_6845535865551575798_o.jpg">
+       </div>
+
+       <div class="chip">
+       <img class="five" src="10916355_1530174477247472_6845535865551575798_o.jpg">
+       </div>
+</section>
+
+
+<footer>
+<!--Html for footer text-->
+<p class="four">
+<br> 
+       Join us on Tuesdays at 6pm(GMT+1) to Dig deep in the Word<br>
+               Thursdays at 6pm(GMT+1) for Faith Clinic<br>
+<br>
+       And our Live stream on Sundays at 9am(GMT+1) for our<br>
+                   Special Celebration Service<br>
+<br>
+                                  
+</p>                                  
+</footer>
+
+</main>
+</body>
+
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Dominion Stories</title>
+<style type="text/css">
+
+/*Menu Icon*/
+.container {
+               display: inline-block;
+               cursor: pointer;
+}
+
+/*bars*/
+.bar1,.bar3 {
+               width: 35px;
+               height: 5px;
+               background-color: #333;
+               margin: 6px 0;
+               transition: 0.4s;
+}
+
+.bar2{
+	           width: 25px;
+               height: 5px;
+               background-color: #333;
+               margin: 6px 0;
+               transition: 0.4s; 
+}
+
+/* Rotate first bar */
+.change .bar1 {
+               transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+               opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+               transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+/* The side navigation menu */
+.sidenav {
+               height: 100%; /
+               width: 0; 
+               position: fixed; 
+               z-index: 1; 
+               top: 0;
+               left: 0;
+               background-color: #111; 
+               overflow-x: hidden; 
+               padding-top: 60px; 
+               transition: 0.5s;
+               opacity: 0.9; 
+}
+
+/* The navigation menu links */
+.sidenav a {
+               padding: 8px 8px 8px 32px;
+               text-decoration: none;
+               font-size: 70px;
+               color: #fae03c;
+               display: block;
+               transition: 0.3s;
+               text-align: center;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+               color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.closebtn {
+               position: absolute;
+               top: 0;
+               right: 25px;
+               font-size: 36px;
+               margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+               transition: margin-left .5s;
+               padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+               .sidenav {padding-top: 15px;}
+               .sidenav a {font-size: 18px;}
+}
+
+/*Dominion stories*/
+h1{
+               font-size: 90px;
+               font-family: Mistral;
+               text-align: right; 
+               margin-top: 0px;
+               color: #000000;
+               text-shadow: 2px 2px 5px red;
+}
+
+/*Story Outline*/
+p.one{
+               text-align: center;
+               font-size: 20px;
+               font-family: Castellar;
+               border-width: 12px; 
+               border-style: solid;
+               border-color: black white white red;
+               padding: 10px 10px 10px 10px;
+               margin-top: -27px;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+               background-color: #a52a2a;
+               color: #ffffff;
+               cursor: pointer;
+               width: 100%;
+               text-align: center;
+               border: 2px solid black;
+               outline: none;
+               transition: 0.4s;
+               display: inline-block;
+               padding: 0 25px;
+               height: 60px;
+               font-size: 16px;
+               line-height: 50px;
+               border-radius: 27px;
+               box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+               background-color: #F7786B;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+               padding: 0 18px;
+               background-color: white;
+               max-height: 0;
+               overflow: hidden;
+               transition: 0.6s ease-in-out;
+               opacity: 0;
+}
+
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+               opacity: 1;
+               max-height: 500px;
+}
+
+button.accordion:after {
+               content: '\02795'; /* Unicode character for "plus" sign (+) */
+               font-size: 13px;
+               color: #000;
+               float: right;
+               margin-left: 5px;
+}
+
+button.accordion.active:after {
+               content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/*Events and times*/
+p.four{
+               text-align: center;
+               text-shadow: 2px 2px 5px;
+               font-family: Harlow Solid Italic;
+               font-size: 20px;
+               width: 70%;
+               margin-left: 23px;
+               text-shadow: 2px 2px 5px red;
+}
+
+footer{
+               color: #ffffff;
+               background-image: url("img_lights_wide.jpg"); 
+               background-repeat: no-repeat;
+               height: 160px;
+               width: 100%;
+               margin-top: 52px;
+               box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+               border-radius: 20px;
+}
+
+</style>
+</head>
+
+<body>
+<header>
+<!-- Use any element to open the sidenav -->
+<span onclick="openNav()">
+       <div class="container" onclick="myFunction(this)">
+       <div class="bar1"></div>
+       <div class="bar2"></div>
+       <div class="bar3"></div>
+       </div>
+</span>
+       
+<!--Js of Menu Icon-->
+<script type="text/javascript">
+       function myFunction(x) {
+       x.classList.toggle("change");
+}
+</script>
+	   
+<!--Html for Menu and Links-->
+<div id="mySidenav" class="sidenav">
+       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        
+       <a href="DMS Home.html">Home</a>
+
+       <a href="Dominion Stories.html">Dominion Stories</a>
+
+       <a href="Current Projects.html">Current Projects</a>
+
+       <a href="Media Resources.html">Media Resources</a>
+</div>
+
+<!--Js for sidenav-->
+<script type="text/javascript">
+/* Open the sidenav */
+       function openNav() {
+       document.getElementById("mySidenav").style.width = "100%";
+}
+
+/* Close/hide the sidenav */
+       function closeNav() {
+       document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+<!--Html for first header and paragraph-->
+       <h1><i>Dominion Stories</i></h1>
+       <p class="one">We all love stories, from the curious infant yearning for a good tale to the frail elders with stories for a lifetime, spanning fiction, true events or a bit of folklore. The Almighty God is the best-storyteller in history, because he has been before the beginning of time and has existed through all ages to give us the most accurate details at every point in the time continuum. He doesn't just give stories, he changes them at his will, he rewrites history over and over for just the one man. We urge you to take a look at some of our stories of miracles, signs, wonders and changes happening in our small part of the world, and we in turn hope that your faith becomes woke as a result to know that God is able to do exceeding abundantly above all we could ever ask or think.
+       </p>
+</header>
+<br>
+
+<!--Html for accordion-->
+<section>
+	   <button class="accordion">Section 1</button>
+       <div class="panel">
+       <p>Lorem ipsum...</p>
+       </div>
+<br>
+       <button class="accordion">Section 2</button>
+       <div class="panel">
+       <p>Lorem ipsum...</p>
+       </div>
+<br>
+       <button class="accordion">Section 3</button>
+       <div class="panel">
+       <p>Lorem ipsum...</p>
+       </div>
+<br>       
+       <button class="accordion">Section 4</button>
+       <div class="panel">
+       <p>Lorem ipsum...</p>
+       </div>
+<br>
+       <button class="accordion">Section 5</button>
+       <div class="panel">
+       <p>Lorem ipsum...</p>
+       </div>
+<br>
+       <button class="accordion">Section 6</button>
+       <div class="panel">
+       <p>Lorem ipsum...</p>
+       </div>
+
+<!--Js of Accordion-->
+<script type="text/javascript">
+	   /* Toggle between adding and removing the "active" and "show" classes when the user clicks on one of the "Section" buttons. The "active" class is used to add a background color to the current button when its belonging panel is open. The "show" class is used to open the specific accordion panel */
+       var acc = document.getElementsByClassName("accordion");
+       var i;
+
+       for (i = 0; i < acc.length; i++) {
+       acc[i].onclick = function(){
+       this.classList.toggle("active");
+       this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+</section>
+
+<br>
+<br>
+<br>
+
+<footer>
+<!--Html for footer text-->
+<p class="four">
+<br> 
+       Join us on Tuesdays at 6pm(GMT+1) to Dig deep in the Word<br>
+               Thursdays at 6pm(GMT+1) for Faith Clinic<br>
+<br>
+       And our Live stream on Sundays at 9am(GMT+1) for our<br>
+                   Special Celebration Service<br>
+<br>
+                                  
+</p>                                  
+</footer>
+
+</body>
+</html>
